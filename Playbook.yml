@@ -1,0 +1,35 @@
+---
+- name: wrapper playbook for kitchen testing "ansible-os-hardening" with custom vars for testing
+  hosts: all
+  sudo: true
+  tasks:
+    - name: Install VIM
+      yum:
+        name: vim
+        state: latest
+  roles:
+    - ansible-os-hardening
+  vars:
+    os_security_users_allow: change_user
+    os_security_kernel_enable_core_dump: false
+    os_security_suid_sgid_remove_from_unknown: true
+    os_auth_pam_passwdqc_enable: false
+    os_desktop_enable: false
+    os_env_extra_user_paths: ['/home']
+    os_auth_allow_homeless: true
+    os_security_kernel_enable_core_dump: false
+    os_security_suid_sgid_blacklist: ['/bin/umount']
+    os_security_suid_sgid_whitelist: ['/usr/bin/rlogin']
+  roles:
+    - ansible-ssh-hardening
+  vars:
+#    network_ipv6_enable: false
+    ssh_allow_root_with_key: true
+#    ssh_client_password_login: true
+#    ssh_client_cbc_required: true
+#    ssh_server_weak_hmac: true
+#    ssh_client_weak_kex: true
+#    ssh_listen_to: ['127.0.0.1']
+    ssh_listen_to: ['*']
+#  roles:
+#    -  ansible-role-nginx
