@@ -1,1 +1,1 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/martin/vagrant_project/ansible","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/martin/ansible/hardening","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
