@@ -1,5 +1,5 @@
 ---
-- name: wrapper playbook for kitchen testing "ansible-os-hardening" with custom vars for testing
+- name: "Playbook to running OS-Hardening"
   hosts: all
   sudo: true
   tasks:
@@ -8,7 +8,7 @@
         name: vim
         state: latest
   roles:
-    - ansible-os-hardening
+    - os-hardening
   vars:
     os_security_users_allow: change_user
     os_security_kernel_enable_core_dump: false
@@ -20,16 +20,16 @@
     os_security_kernel_enable_core_dump: false
     os_security_suid_sgid_blacklist: ['/bin/umount']
     os_security_suid_sgid_whitelist: ['/usr/bin/rlogin']
-  roles:
-    - ansible-ssh-hardening
-  vars:
+#  roles:
+#    - ansible-ssh-hardening
+#  vars:
 #    network_ipv6_enable: false
-    ssh_allow_root_with_key: true
+#    ssh_allow_root_with_key: true
 #    ssh_client_password_login: true
 #    ssh_client_cbc_required: true
 #    ssh_server_weak_hmac: true
 #    ssh_client_weak_kex: true
 #    ssh_listen_to: ['127.0.0.1']
-    ssh_listen_to: ['*']
+#    ssh_listen_to: ['*']
 #  roles:
 #    -  ansible-role-nginx
