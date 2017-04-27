@@ -9,6 +9,11 @@
         state: latest
   roles:
     - os-hardening
+    - ssh-hardening
+    - role-authorized_keys
+      #authorized_keys_list:
+      #  - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDN8GFtN12naP9bHxjj7wsYqrIu8sdw3uMytWAvqo9VckbTOnrgQp3U9Hb0H6mvFaE9CWzB3BebpNva8LpNOtX/TA4trPSPjUiKHUG0++ljE2uQPpDxTtKMOlwOucXFhbEKoGYzrkAYYt51SkQkGfwoe5LZHwn817wXjOu3R2AEnm2gmnWCbiPBkYbisbbFgJWPnJcmFuO8YEAmQiuFJCD1+fDopik0hemSnuRlusBN21MOYekKpTR2zdYtkwSzS9jjIzn38XxnFSVKEm++B7llBL4TYhG24+k/EEhRpn/pKSDgVn8uqgzEOwxD8AdDo0tPoN17c1WL4WNxbpB8szBv
+      #  - user: "root"
   vars:
     os_security_users_allow: change_user
     os_security_kernel_enable_core_dump: false
@@ -17,7 +22,6 @@
     os_desktop_enable: false
     os_env_extra_user_paths: ['/home']
     os_auth_allow_homeless: true
-    os_security_kernel_enable_core_dump: false
     os_security_suid_sgid_blacklist: ['/bin/umount']
     os_security_suid_sgid_whitelist: ['/usr/bin/rlogin']
 #  roles:
