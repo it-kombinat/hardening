@@ -1,0 +1,3 @@
+# Ansible-SSH-KEYS-Role
+- src: https://github.com/it-kombinat/ansible-role-ssh-keys
+  name: role-ssh-keys
