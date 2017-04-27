@@ -1,6 +1,0 @@
-[submodule "roles/ansible-os-hardening"]
-	path = roles/ansible-os-hardening
-	url = https://github.com/dev-sec/ansible-os-hardening.git
-[submodule "roles/ansible-role-ssh-keys"]
-	path = roles/ansible-role-ssh-keys
-	url = https://github.com/it-kombinat/ansible-role-ssh-keys.git
